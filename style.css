@@ -1,0 +1,282 @@
+.manrope-font {
+  font-family: 'Manrope', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope ', sans-serif;
+  color: hsl(217, 19%, 35%);
+}
+
+body {
+  background-color: hsl(210, 46%, 95%);
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10% 5%;
+}
+
+main {
+  max-width: 375px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(210, 46%, 95%);
+  box-shadow: 0px 4rem 8rem -7rem hsl(212, 23%, 69%);
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.image-container {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.content h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 20px 0;
+  line-height: 1.7rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.7rem;
+  color: hsl(212, 23%, 69%);
+}
+
+.social-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 2rem;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.profile-info h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+}
+
+.profile-info p {
+  color: hsl(212, 23%, 69%);
+}
+
+.share {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+  z-index: 101;
+  background-color: transparent;
+  border: none;
+  margin-right: 1rem;
+}
+
+.share-icon {
+  fill: hsl(217, 19%, 35%);
+}
+
+.share:hover {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.share:hover .share-icon {
+  fill: hsl(210, 46%, 95%);
+}
+
+.share.toggled {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.share.toggled .share-icon {
+  fill: hsl(210, 46%, 95%);
+}
+
+.share.toggled:hover {
+  background-color: hsl(214, 17%, 51%);
+}
+
+.bubble {
+  position: absolute;
+  display: none;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 0px 0px 10px 10px;
+  background-color: hsl(217, 19%, 35%);
+  cursor: pointer;
+}
+
+.bubble.show {
+  display: flex;
+  opacity: 1;
+  animation: pop 0.3s ease-in-out;
+}
+
+.bubble h2 {
+  color: hsl(212, 23%, 69%);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+}
+
+.social-media {
+  margin-left: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.close {
+  background-color: hsl(210, 46%, 95%);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 5%;
+  }
+
+  main {
+    max-width: 800px;
+    flex-direction: row;
+    height: 300px;
+    box-shadow: 0px 2rem 3rem -2rem hsl(212, 23%, 69%);
+  }
+
+  .img-container {
+    width: 40%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .img-container img {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .desktop-container {
+    width: 60%;
+    padding: 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .content h1 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .content p {
+    font-size: 15px;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-container {
+    padding-top: 0;
+  }
+
+  .social-media {
+    margin: 0;
+  }
+
+  .profile img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .profile-info {
+    gap: 0.2rem;
+  }
+
+  .profile-info h2 {
+    font-size: 1rem;
+  }
+
+  .profile-info p {
+    font-size: 0.95rem;
+  }
+
+  .bubble {
+    position: absolute;
+    right: -5.5rem;
+    bottom: 4rem;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0 2rem;
+    box-shadow: 0px 0.5rem 2rem -0.5rem hsl(212, 23%, 69%);
+  }
+
+  .bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid hsl(217, 19%, 35%);
+  }
+
+  .bubble.show {
+    display: flex;
+  }
+}
